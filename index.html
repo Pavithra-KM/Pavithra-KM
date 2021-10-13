@@ -1,115 +1,36 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Cards Project</title>
+        <title>Skills Project</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" 
         integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" 
         crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
+        <link rel="stylesheet" href="https://cdn.datatables.net/autofill/2.3.7/css/autoFill.dataTables.min.css"> 
     </head>
     <body>
-        <div class="container pt-3">
-            <div class="row">
-              <div class="col-md-2">
-                <div class="card">
-                  <div class="card-header bg-primary text-white">
-                    <div class="row align-items-center">
-                      <div class="col">
-                        <h5 style="text-align:center;">Company Count</h5>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="card-footer">
-                    <p class="card-text" id="companyCount" style="text-align: center;"></p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-2">
-                <div class="card">
-                  <div class="card-header bg-success text-white">
-                    <div class="row align-items-center">
-                      <div class="col">
-                        <h5 style="text-align:center;">Clients Count</h5>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="card-footer">
-                    <p class="card-text" id="clientCount" style="text-align: center;"></p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-2">
-                <div class="card">
-                  <div class="card-header bg-warning text-white">
-                    <div class="row align-items-center">
-                      <div class="col">
-                        <h5 style="text-align:center;height: 50px;">Users Count</h5>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="card-footer">
-                    <p class="card-text" id="usersCount" style="text-align: center;"></p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-2">
-                <div class="card">
-                  <div class="card-header bg-danger text-white">
-                    <div class="row align-items-center">
-                      <div class="col">
-                        <h5 style="text-align:center;">Compaigns Count</h5>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="card-footer">
-                    <p class="card-text" id="campaignsCount" style="text-align: center;"></p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-2">
-                <div class="card">
-                  <div class="card-header bg-info text-white">
-                    <div class="row align-items-center">
-                      <div class="col">
-                        <h5 style="text-align:center;">Resumes Count</h5>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="card-footer">
-                    <p class="card-text" id="resumesCount" style="text-align: center;"></p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-2">
-                <div class="card">
-                  <div class="card-header bg-dark text-white">
-                    <div class="row align-items-center">
-                      <div class="col">
-                        <h5 style="text-align:center;">Interviews Count</h5>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="card-footer">
-                    <p class="card-text" id="interviewsCount" style="text-align: center;"></p>
-                  </div>
-                </div>
-              </div>
-            </div>
-        </div>
-          <!-- <div class="container pt-5">
+        <div class="container pt-5">          
             <table class="table table-striped" id="myTable">
               <thead>
-                <th>Reported Date</th>
-                <th>Created Date</th>
-                <th>Updated Date</th>
+                <tr>
+                  <th>Skill Name</th>
+                  <th>Category</th>
+                  <th>Subcategory</th>
+                </tr>
               </thead>
               <tbody id="tbody"></tbody>
             </table>
-          </div> -->
+        </div>
+        <div id="myPieChart" style="text-align: center;"></div>
+        <!-- <div id="donutchart" style="text-align: center;"></div> -->
+        <div id="barchart_material" style="text-align: center;"></div>
     </body>
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/autofill/2.3.7/js/dataTables.autoFill.min.js"></script>
     <script src="/js/index.js"></script>
 </html>

@@ -1,96 +1,114 @@
-var userList = [];
-var mainSchema = [
-    {
-        "reportDate": "",
-        "createdAt": "",
-        "updatedAt": "",
-        "company": {
-            "created": 20,
-            "createdCompanyID": []
-        },
-        "clients": {
-            "created": 9,
-            "createdClientID": []
-        },
-        "users": {
-            "created": 21,
-            "createdUserID": [],
-            "deleted": 0,
-            "deletedUserID": []
-        },
-        "campaigns": {
-            "created": 6,
-            "createdCampaigns": []
-        },
-        "resumes": {
-            "created": 120,
-            "createdResumes": []
-        },
-        "interviews": {
-            "totalScheduled": 60,
-            "totalAttended": 0,
-            "announcement": {"scheduled": 0, "attended": 0, "interviewID": "", "roundNumber": 0, "roundName": ""},
-            "assessment": {"scheduled": 0, "attended": 0, "interviewID": "", "roundNumber": 0, "roundName": ""},
-            "videoRound": {"scheduled": 0, "attended": 0, "interviewID": "", "roundNumber": 0, "roundName": ""},
-            "inPersonRound": {"scheduled": 0, "attended": 0, "interviewID": "", "roundNumber": 0, "roundName": ""}
-            }
-        }
-];
-//Pass json data to Database
-$(document).ready(function(){
-    printCounts()
-    $.ajax({
-        type: 'post',
-        url: '/passData',
-        contentType: 'application/json',
-        data: JSON.stringify(mainSchema),
-        dataType: 'json',
-        success: function(result){
-            console.log(result)
-        },
-        error: function(error){
-            console.log(error)
-        },
-    })
-})
+//To create datatable with aocolumns
+$(document).ready( function() {
+  var table = $('#myTable').dataTable( {
+    "sAjaxSource": "/skillsdata",
+    "aoColumns": [
+      { "mData": "skill" },
+      { "mData": "category" },
+      { "mData": "subcategory" },
+    ],
+    "aoColumnDefs": [
+      {
+          "mRender": function ( data, type, row ) {
+              return data +' '+ row[3];
+          },
+          "aTargets": [ -1 ]
+      },
+    ]
+  });
+});
 
-function printCounts(){
-    for(var i in mainSchema){
-        console.log(mainSchema[i])
-    }
-    document.getElementById('companyCount').innerHTML = mainSchema[i].company.created;
-    document.getElementById('clientCount').innerHTML = mainSchema[i].clients.created;
-    document.getElementById('usersCount').innerHTML = mainSchema[i].users.created;
-    document.getElementById('campaignsCount').innerHTML = mainSchema[i].campaigns.created;
-    document.getElementById('resumesCount').innerHTML = mainSchema[i].resumes.created;
-    document.getElementById('interviewsCount').innerHTML = mainSchema[i].interviews.totalScheduled;
-};
-
-// function getData(){
-//     var tableData = "";
+//To get JSON Data into table
+// $(document).ready(function(){
+//     var tableData = [];
 //     $.ajax({
 //         type:'get',
-//         url:'/getTable',
+//         url:'/skillsdata',
 //         success: function (result) {
-//             console.log(result);
-//             userList = result;
-//             result.forEach(function(dt){
-//                 tableData += '<tr>'+
-//                                 '<td>'+dt.reportDate+'</td>'+
-//                                 '<td>'+dt.createdAt+'</td>'+
-//                                 '<td>'+dt.updatedAt+'</td>'+
-//                             +'</tr>';
-//             })
-//             if(userList != ""){
-//                 $('#tbody').html(tableData);
-//                 console.log(tableData)
-//             }
-//             else{
-//                  document.getElementById('tbody').innerHTML = 'No Data Available';
-//             }
-//         },
-//         error: function(err){
-//             console.log(err);
+//             tableData = result.data
+//             buildTable(tableData)
 //         }
 //     })
+    
+//     function buildTable(data){
+//         var table = document.getElementById('tbody');
+
+//         for(var i=0;i < data.length; i++){
+//             var row = `<tr>
+//                         <td>${data[i].skill}</td>
+//                         <td>${data[i].category}</td>
+//                         <td>${data[i].subcategory}</td>
+//                        </tr>`
+//             table.innerHTML += row;
+//         }
+//     }
+// })
+
+//Pie Chart
+// google.charts.load('current', {packages: ['corechart']});
+// google.charts.setOnLoadCallback(drawChart);
+  
+// function drawChart() {
+//     // Define the chart to be drawn.
+//     var data = new google.visualization.DataTable();
+//     data.addColumn('string', 'Element');
+//     data.addColumn('number', 'Percentage');
+//     data.addRows([
+//         ['skill', 0.20],
+//         ['category', 0.21],
+//         ['subcategory', 0.59]
+//     ]);
+  
+//     // Instantiate and draw the chart.
+//     var chart = new google.visualization.PieChart(document.getElementById('myPieChart'));
+//     chart.draw(data, null);
+// } 
+
+//Donut Chart
+// google.charts.load('current', {packages: ['corechart']});
+// google.charts.setOnLoadCallback(drawChart);
+  
+// function drawChart() {
+//     // Define the chart to be drawn.
+//     var data = new google.visualization.DataTable();
+//     data.addColumn('string', 'Element');
+//     data.addColumn('number', 'Percentage');
+//     data.addRows([
+//         ['skill', 0.20],
+//         ['category', 0.21],
+//         ['subcategory', 0.59]
+//     ]);
+//     var options = {
+//         title: 'Skills Data',
+//         pieHole: 0.4,
+//       };
+
+//       var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+//       chart.draw(data, options);
 // }
+
+//Bar Graph
+// google.charts.load('current', {'packages':['bar']});
+// google.charts.setOnLoadCallback(drawChart);
+
+// function drawChart() {
+//     var data = google.visualization.arrayToDataTable([
+//         ['skill', 1000, 400, 200],
+//         ['category', 1170, 460, 250],
+//         ['subcategory', 660, 1120, 300],
+//     ]);
+
+//     var options = {
+//         chart: {
+//             title: 'Skills Data',
+//         },
+//         bars: 'horizontal' // Required for Material Bar Charts.
+//     };
+
+//     var chart = new google.charts.Bar(document.getElementById('barchart_material'));
+
+//     chart.draw(data, google.charts.Bar.convertOptions(options));
+// }
+
+
+

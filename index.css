@@ -1,0 +1,49 @@
+:root {
+    --mainColor: #415cff;
+}
+
+#navbar{
+    font-size: 30px;
+    height: 50px;
+    background-color: white;
+}
+
+#dataTable{
+    margin-top: 40px;
+    padding-left: 50px;
+}
+
+i{
+    color: gray;
+}
+
+.paginate_button.current{
+    background-color: white;
+}
+
+.paginate_button.current{
+    background-color: var(--mainColor) !important;
+    border-color: var(--mainColor);
+    border-radius: 21%;
+    /* width: 20px;
+    justify-content: center;
+    display: flex; */
+}
+
+#bars{
+    padding-left: 15px;
+    font-size: 20px;
+}
+
+#mapRecruitText{
+    padding-left: 15px;
+}
+
+#sideNavBar{
+    width: 50px;
+}
+
+#mySidenav{
+    padding-top: 80px;
+    font-size: 18px;
+}

@@ -1,0 +1,20 @@
+[
+    {
+        "name":"pavithra",
+        "age":"50",
+        "phone":"9876543",
+        "address":"bly"
+    },
+    {
+        "name":"appu",
+        "age":"44",
+        "phone":"8765433",
+        "address":"bangalore"
+    },
+    {
+        "name":"virat",
+        "age":"34",
+        "phone":"987654",
+        "address":"delhi"
+    }
+]

@@ -1,0 +1,32 @@
+#table{
+    width: 49%;
+    height: 500px;
+    float: left;
+}
+input{
+    border-radius: 10px;
+    width:200px;
+    height: 20px;
+    font-size: 15px;
+}
+#button{
+    width:200px;
+    height: 30px;
+    font-size: 20px;
+    border-radius: 10px;
+}
+#td{
+    font-size: 25px;
+    padding-left: 50px;
+}
+#tbl{
+    border: solid 1px black;
+}
+#tbl tr,th,td{
+    padding: 10px;
+    text-align: center;
+}
+.container{
+    padding-top: 50px;
+    padding-left: 50px;
+}

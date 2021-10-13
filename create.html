@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{title}}</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+        integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+        <link rel="stylesheet" href="/css/index.css">
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/jquery-tageditor@1.0.1/jquery.tag-editor.css"/>
+    </head>
+    <body>
+        <nav class="navbar fixed-top navbar-expand-sm bg-light" id="navbar">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link btn btn-light" href="/createResume">Create Resume</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link btn btn-light" href="/profilesTable">Profile</a>
+              </li>
+            </ul>
+        </nav>
+        <div class="container border" id="personalId">
+            <div class="container pt-3">
+                <h4>Personal Details</h4>
+                <div class="row pt-3">
+                    <div class="col-sm-4">
+                      <input type="text" class="form-control" id="firstName" placeholder="First Name">
+                    </div>
+                    <div class="col-sm-4">
+                      <input type="text" class="form-control" id="middleName" placeholder="Middle Name">
+                    </div>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" id="lastName" placeholder="Last Name">
+                    </div>
+                </div>
+                
+                <div class="row pt-3 emailClass numberClass" id="emailContainer(0) numberContainer(0)">
+                    <div class="col-sm-5" id="profileEmails">
+                        <input type="text" id="emails0" class="form-control email" placeholder="Email">
+                    </div>
+                    <div class="col-sm-1">
+                        <i class="fas fa-plus-circle" id="addEmail"></i>
+                    </div>
+                    <div class="col-sm-5">
+                        <input type="text" id="numbers0" class="form-control number" placeholder="Mobile Number">
+                    </div>  
+                    <div class="col-sm-1">
+                        <i class="fas fa-plus-circle" id="addNumber"></i>
+                    </div>       
+                </div>
+                <div class="row pt-3">
+                    <div class="col-sm-6">
+                        <div id="emailId1"></div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div id="mobileId1"></div> 
+                    </div>
+                </div>
+                <div class="row pt-3 pb-3">
+                    <div class="col-sm-12">
+                      <input type="text" id="location" placeholder="Current Location" class="form-control locationClass">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container border pt-3 align-self-center" id="objectiveId">
+            <h4>Objectives</h4><br>
+        </div>
+        <div class="container border pt-sm-3" id="objectiveId1">
+            <div class="form-group">
+                <textarea class="form-control" id="objectiveInput" rows="4"></textarea>
+            </div>
+        </div>
+        <div class="container border pt-3 align-self-center" id="summaryId">
+            <h4>Summary</h4><br>
+        </div>
+        <div class="container border pt-sm-3" id="summaryId1">
+            <div class="form-group">
+                <textarea class="form-control" id="summaryInput" rows="4"></textarea>
+            </div>
+        </div>
+        <div class="container border pt-3 align-self-center" id="skillsId">
+            <h4>Skills</h4><br>
+        </div>
+        <div class="container border pt-sm-3 pb-3" id="skillsId1">
+            <textarea type="text" class="form-control mainSkills" id="mainSkills0" placeholder="Enter tags"></textarea>
+        </div>
+        <div class="container border pt-3 align-self-center" id="educationId">
+            <h4>Education</h4><br>
+        </div>
+        <div class="container border pt-sm-3" id="educationId1">
+            <div class="row educationClass" id="educationContainer0">
+                <div class="col-sm-12">
+                <div class="pb-3" id="education">
+                <div class="container border pb-3" style="border: solid black 1px;border-radius: 5px;">
+                    <i class="fas fa-minus-circle" id="educationDeleteIcon0" onclick="removeEducation(0)" style="padding-left: 1050px;"></i>
+                    <div class="row pt-3">
+                        <div class="col-sm-6">
+                            <input type="text" id="degreeInput0" placeholder="Degree" class="form-control degreeClass">
+                        </div>
+                        <div class="col-sm-6">
+                            <!-- //<label>Major</label> -->
+                            <textarea type="text" id="majorInput0" placeholder="Major" class="form-control majorClass"></textarea>
+                        </div>
+                    </div>
+                    <div class="row pt-3">
+                        <div class="col-sm-6">
+                            <input type="text" id="campusInput0" placeholder="College" class="form-control campusClass">
+                        </div>
+                        <div class="col-sm-2">
+                            <div class="form-check-inline">
+                                <label class="form-check-label">
+                                  <input type="checkbox" id="flagInput" class="form-check-input flagClass">Red Flag
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="text" id="universityInput0" placeholder="University" class="form-control universityClass">
+                        </div>
+                    </div>
+                    <div class="row pt-3">
+                        <div class="col-sm-6">
+                            <input type="text" id="locationInput0" placeholder="Location" class="form-control locationClass">
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="text" id="marksInput0" placeholder="Marks" class="form-control marksClass">
+                        </div>
+                        <div class="form-check-inline">
+                            <label class="form-check-label">
+                              <input type="radio" class="form-check-input" name="optradio">GPA
+                            </label>
+                        </div>
+                        <div class="form-check-inline">
+                            <label class="form-check-label">
+                              <input type="radio" class="form-check-input" name="optradio">%
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row pt-3">
+                        <div class="col-sm-6">
+                            <input type="text" id="startDate0" placeholder="Start Date" class="form-control startDateClass">
+                        </div>
+                        <div class="col-sm-6">
+                            <input type="text" id="endDate0" placeholder="End Date" class="form-control endDateClass">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+            </div>
+            <div id="educationDetails"></div>
+            <i class="fas fa-plus-circle pt-xl-3" id="educationAddIcon" style="padding-left: 500px;" ></i>
+        </div>
+        <div class="container border pt-3 align-self-center" id="experienceId">
+            <h4>Experience</h4><br>
+        </div>
+        <div class="container border pt-sm-3" id="experienceId1">
+            <div class="row experienceClass" id="experienceContainer0">
+                <div class="col-sm-12">
+                <div id="experience">
+                <div class="container border pb-3" style="border: solid black 1px;border-radius: 5px;">
+                    <i class="fas fa-minus-circle" onclick="removeExperience(0)" id="experienceDeleteIcon0" style="padding-left: 1050px;"></i>
+                    <div class="row pt-2">
+                        <div class="col-sm-4">
+                            <input type="text" id="companyInput0" placeholder="Company" class="form-control companyClass">
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-check-inline">
+                                <label class="form-check-label">
+                                <input type="checkbox" class="form-check-input">Red Flag
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="text" id="jobInput0" placeholder="Job Title" class="form-control jobClass">
+                        </div>
+                    </div>
+                    <div class="row pt-3">
+                        <div class="col-sm-4">
+                            <input type="text" id="locationsInput0" placeholder="Location" class="form-control locationsClass">
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="text" id="start-dateInput0" placeholder="Start Date" class="form-control start-dateClass">
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="text" id="end-dateInput0" placeholder="End Date" class="form-control end-dateClass">
+                        </div>
+                    </div>
+                    <div class="row pt-3">
+                        <div class="col-sm-12">
+                            <label>Job Description</label>
+                            <div class="form-group">
+                                <textarea id="descriptionInput0" class="form-control descriptionClass" rows="4"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row pt-3">
+                        <label class="pl-3">Skills</label>
+                        <div class="col-sm-12">
+                            <textarea type="text" placeholder="Skills" id="experienceSkills0" class="form-control experienceSkills"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+            </div>
+            <div id="experienceDetails"></div>
+            <div id="experience1"></div>
+            <i class="fas fa-plus-circle pt-xl-4" id="experienceAddIcon" style="padding-left: 500px;"></i>
+        </div>
+        <div class="container border pt-3 align-self-center" id="certificateId">
+            <h4>Certifications</h4><br>
+        </div>
+        <div class="container border pt-sm-3" id="certificateId1">
+            <div class="row certificatesClass" id="certificateContainer0">
+                <div class="col-sm-12">
+            <div id="certificate">
+                <div class="container border pb-3" style="border: solid black 1px;border-radius: 5px;">
+                    <i class="fas fa-minus-circle" onclick="removeCertificate(0)"  id="certificateDeleteIcon0" style="padding-left: 1050px;"></i>
+                    <div class="row pt-2">
+                        <div class="col-sm-6">
+                            <input type="text" id="courseInput0" placeholder="Course" class="form-control courseClass">
+                        </div>
+                        <div class="col-sm-6">
+                            <input type="text" id="campusinput0" placeholder="Campus" class="form-control campusclass">
+                        </div>
+                    </div>
+                    <div class="row pt-3">
+                        <div class="col-sm-4">
+                            <input type="text" id="marksinput0" placeholder="Marks" class="form-control marksC=class">
+                        </div>
+                        <div class="form-check-inline">
+                            <label class="form-check-label">
+                              <input type="radio" class="form-check-input" name="optradio">GPA
+                            </label>
+                        </div>
+                        <div class="form-check-inline">
+                            <label class="form-check-label">
+                              <input type="radio" class="form-check-input" name="optradio">%
+                            </label>
+                        </div>
+                        <div class="col-sm-6">
+                            <input type="text" id="locationinput0" placeholder="Location" class="form-control locationclass">
+                        </div>
+                    </div>
+                    <div class="row pt-3">
+                        <div class="col-sm-4">
+                            <input type="text" id="startdate0" placeholder="Start Date" class="form-control startdateClass">
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="text" id="enddate0" placeholder="End Date" class="form-control enddateClass">
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="text" id="expiredate0" placeholder="Expiry Date" class="form-control expiredateClass">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+            </div>
+            <div id="certificateDetails"></div>
+            <i class="fas fa-plus-circle pt-xl-2" id="certificateAddIcon" style="padding-left: 500px;"></i>
+        </div>
+        
+        <div class="container border pt-3 align-self-center" id="licenceId">
+            <h4>Licence</h4><br>
+        </div>
+        <div class="container border pt-sm-3" id="licenceId1">
+            <div class="row licenceClass" id="licenceContainer0">
+                <div class="col-sm-12">
+            <div id="licence">
+                <div class="container border pb-3" id="li0" style="border-radius: 5px;">
+                    <i class="fas fa-minus-circle" id="licenceDeleteIcon0" onclick="removeLicence(0)" style="padding-left: 1050px;"></i>
+                    <div class="row pt-2">
+                        <div class="col-sm-12">
+                            <input type="text" id="nameInput0" placeholder="Name" class="form-control nameClass">
+                        </div>
+                    </div>
+                    <div class="row pt-3">
+                        <div class="col-sm-4">
+                            <input type="text" id="issuedByInput0" placeholder="Issued By" class="form-control issuedByClass">
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="text" id="issuedOnInput0" placeholder="Issued On" class="form-control issuedOnClass">
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="text" id="expireDateInput0" placeholder="Expire Date" class="form-control expireDateClass">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+            </div>
+            <div id="licenceDetails"></div>
+            <div id="licence1"></div>
+            <i class="fas fa-plus-circle pt-xl-2" id="licenceAddIcon" style="padding-left: 500px;"></i>
+        </div>
+
+        <div class="container pt-3">
+            <form action="/single" method="POST" enctype="multipart/form-data" id="fileupload" name="fileupload">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <input type="file" id="file" name="file"/>
+                    </div>
+                    <div class="col-sm-2">
+                        <input type="button" value="Upload" name="fileUpload" id="fileUpload" class="btn btn-primary" onclick="getFiles()">
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div class="container pt-sm-5" id="createResume">
+            <button class="btn btn-success">Create</button>
+        </div>
+    </body>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-tageditor@1.0.1/jquery.tag-editor.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-tageditor@1.0.1/jquery.tag-editor.min.js"></script>
+    <script src = "http://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js" defer ></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-caret@1.3.7/jquery.caret.js"></script>
+     
+
+    <script type="text/Javascript" src="/js/index.js"></script>
+</html>
